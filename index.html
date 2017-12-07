@@ -1,309 +1,284 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>Cayman</title>
+    <title>Alzheimer’s Disease and Cognitive Impairment Prediction</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link rel="stylesheet" href="css/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/cayman.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <section class="page-header">
-      <h1 class="project-name">Cayman</h1>
-      <h2 class="project-tagline">A responsive theme for your project on GitHub Pages</h2>
-      <a href="#" class="btn">View on GitHub</a>
-      <a href="#" class="btn">Download .zip</a>
-      <a href="#" class="btn">Download .tar.gz</a>
+        <h1 class="project-name">Alzheimer’s Disease and Cognitive Impairment Prediction</h1>
+        <h2 class="project-tagline">Eliud Omollo, BS, MS</h2>
+        <a href="#" class="btn">Exploratory Data Analysis</a>
+        <a href="#" class="btn">Predictions</a>
+        <a href="#" class="btn">Additional Study</a>
     </section>
 
     <section class="main-content">
-      <p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>. <a href="https://github.com">Links</a> should be blue with no underlines (unless hovered over).</p>
 
-      <p>There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.</p>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>I. Problem Statement and Motivation</h2>
 
-      <p>There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.</p>
+        <p>In this study, we examine the significance of a subject's medical history in predicting symptoms of dementia or Alzheimer's disease.</p>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>II. Introduction</h2>
+        <p>Alzheimer’s is a disease that erodes a patient’s memory, thinking skills and leads to poor judgement, reasoning, planning, language, and inability to perform simple tasks. It is the most common type of dementia affecting more than 5 million Americans.</p>
+        <p>Even though Alzheimer’s is ranked as the 6th leading cause of death in the United States, there is currently no cure for the disease. To find the cure for the disease, the first step is to learn and understand the cause of the disease. Even though, there’s tremendous about of data on the disease, scientists are still far from pin pointing a clear cause of the disease.</p>
 
-      <blockquote>
-      <p>There should be no margin above this first sentence.</p>
+        <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>A. Risk Factors</h3>
 
-      <p>Blockquotes should be a lighter gray with a gray border along the left side.</p>
+        <ol class="task-list">
+            <li>
+                <strong>Age: </strong>Even though Alzheimer’s is not part of the natural aging process, the risk of developing Alzheimer’s increases with age.
+            </li>
+            <li><strong>Genetics: </strong>The presence of certain genes, e.g.<a href="https://en.wikipedia.org/wiki/Apolipoprotein_E">apolipoprotein e4 (APoE4)</a> increase the risk of developing Alzheimer’s.
+            </li>
+            <li><strong>Sex: </strong>Studies show that women are at a higher risk for developing Alzheimer’s compared to men.
+            </li>
+            <li><strong>Past Medical History: </strong>Subjects with Obesity, High blood pressure etc. have a higher chance of developing Alzheimer’s
+            </li>
+        </ol>
 
-      <p>There should be no margin below this final sentence.</p>
-      </blockquote>
+        <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>B. Description of Data:</h3>
+        <p>The data from this study was obtained from <a href="http://www.adni-info.org/">ADNI (Alzheimer’s Disease Neuroimaging Initiative).</a> The data is maintained at USC’s Laboratory of Neuroimaging at <a href="http://adni.loni.usc.edu/"> ADNI LONI</a></p>
+        <p>The data is grouped into the following categories:</p>
 
-      <h1>
-      <a id="user-content-header-1" class="anchor" href="#header-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Header 1</h1>
+        <ol class="task-list">
+            <li>Assessments</li>
+            <li>Biospecimen</li>
+            <li>Enrollment</li>
+            <li>Genetic</li>
+            <li>Imaging </li>
+            <li>Study Info</li>
+            <li>Subject Characteristics</li>
+            <li>Test Data</li>
+            <li>_Archive </li>
+            <li>_ALL </li>
+        </ol>
 
-      <p>This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.</p>
+        <p>For this study, we specifically used the following datasets:</p>
+        <ul class="task-list">
+            <li>Medical History <span>&#8594;</span> Medical History<span>&#8594;</span> Medical History [ADNI1,GO,2]</li>
+            <li>Merged Data: Study Info <span>&#8594;</span> Data & Databases <span>&#8594;</span> Key ADNI tables merged into one table</li>
+        </ul>
+        <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>C. Target Variable</h3>
+        <p>The data target variable for this study is the "DX" column found the on ADNIMERGE.csv dataset</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Target</th>
+                    <th>Abbreviation</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Normal Aging /Cognitively Normal</td>
+                    <td>CN</td>
+                    <td>CN participants are the control subjects in the ADNI study. They show no signs of depression, mild cognitive impairment or dementia</td>
+                </tr>
+                <tr>
+                    <td>Significant Memory Concern</td>
+                    <td>MCI</td>
+                    <td>MC participants score within normal range for cognition (or CDR = 0) but indicate that they have a concern, and exhibit slight forgetfulness. The informant does not equate this as progressive memory impairment nor considers this as consistent forgetfulness.</td>
+                </tr>
+                <tr>
+                    <td>Dementia</td>
+                    <td>Dementia</td>
+                    <td>Dementia</td>
+                </tr>
+            </tbody>
+        </table>
 
-      <h2>
-      <a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Header 2</h2>
 
-      <blockquote>
-      <p>This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.</p>
-      </blockquote>
 
-      <h3>
-      <a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Header 3</h3>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>III: Preprocessing</h2>
+        <p><strong>1: Merge: </strong>Merged the data using RID Column to guarantee that the medical record information on MEDHIST.csv matched correctly mapped to the ADNIMERGE.csv file.</p>
+        <p><strong>2. Evaluate Missing Data: </strong>Investigated missing data and observed that the following columns had null values:</p>
+        <p><img src="img/missing-data.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></p>
+        <ol class="task-list">
+            <li>DX: 32% Missing</li>
+            <li>MH14AALCH : 97.65 % Missing</li>
+            <li>MH14BALCH : 33.04 % Missing</li>
+            <li>MH14CALCH : 33.04% Missing</li>
+            <li>MH15ADRUG : 52.99 % Missing</li>
+            <li>MH15BDRUG : 52.99% Missing</li>
+            <li>MH16ASMOK : 33.04% Missing</li>
+            <li>MH16BSMOK : 33.04% Missing</li>
+            <li>MH16CSMOK : 33.04 % Missing</li>
+        </ol>
+        <p>These columns represent alcohol consumption, drug abuse and smoking. We considered using data imputation techniques to impute the missing data. But we ultimately decided against it. In our view, it’s would be inaccurate to conclude that a subject is smoker/drug user/consumes alcohol based on other the information on the medical chart and without a deep study on causal inference. We ultimately decided to drop these columns from the model. We also decided to drop the rows that did not have DX for the same reasons.</p>
+        <p><strong>3. Encode Output: </strong>The target variable is presented in the form of labels i.e. ‘CN’,’MCI’, ‘Dementia’. We used the LabelEncoder() method to encode the target as follows:</p>
+        <pre><code>#encode the labels
+<br>from sklearn import preprocessing
+<br>le = preprocessing.LabelEncoder()
+<br>data['DX_'] = le.fit_transform(data['DX'])
+<br>print(le.inverse_transform([0, 1, 2]))
+<br>data = data.drop('DX', axis=1)</code>
+</pre>
+        <table>
+            <thead>
+                <tr>
+                    <th>Target</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CN</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Dementia</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>MCI</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
 
-      <pre><code>This is a code block following a header.</code></pre>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>IV. Exploratory Data Analysis</h2>
+        <p><img src="img/dx-count.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></p>
+        <p><img src="img/pairplots.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></p>
 
-      <h4>
-      <a id="user-content-header-4" class="anchor" href="#header-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Header 4</h4>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Selection</h2>
+        <p>We will use LogisticRegression with cross validation as a base model for our system. The table below shows the Classfication Report report for this model. Given the unbalanced nature of the data, the f1-score will be a better metric of measurements.F1-score is a weighted average of the precision and recall, with the best values at 1 and worst score at 0.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>precision</th>
+                    <th>recall</th>
+                    <th>f1-score </th>
+                    <th>support</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>0.41</td>
+                    <td>0.23 </td>
+                    <td>0.30 </td>
+                    <td>1155</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> 0.75</td>
+                    <td> 0.00</td>
+                    <td>0.01</td>
+                    <td>734</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>0.47 </td>
+                    <td>0.82</td>
+                    <td>0.60</td>
+                    <td>1654</td>
+                </tr>
+                <tr>
+                    <td>avg / total</td>
+                    <td> 0.51 </td>
+                    <td>0.46</td>
+                    <td>0.38</td>
+                    <td>3543</td>
+                </tr>
 
-      <ul class="task-list">
-      <li>This is an unordered list following a header.</li>
-      <li>This is an unordered list following a header.</li>
-      <li>This is an unordered list following a header.</li>
-      </ul>
+            </tbody>
+        </table>
 
-      <h5>
-      <a id="user-content-header-5" class="anchor" href="#header-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Header 5</h5>
+        <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decision Boundary</h3>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predictions</h2>
+        <p>We evaluated the following models</p>
+        <ol class="task-list">
+            <li>RandomForestClassifier</li>
+            <li>Linear DiscriminantAnalysis</li>
+            <li>Quadratic DiscriminantAnalysis</li>
+            <li>KNeighborsClassifier</li>
+        </ol>
+        <p>We did this by creating a pipeline of the models, then performed parameter tuning using crosss-validation, boostrap and Grid-Search For this data, Random Forrest classifer produced the best results. The Classification table below shows the results</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>precision</th>
+                    <th>recall</th>
+                    <th>f1-score </th>
+                    <th>support</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>0.82</td>
+                    <td>0.85 </td>
+                    <td>0.83 </td>
+                    <td>1155</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> 0.67</td>
+                    <td> 0.57</td>
+                    <td>0.61</td>
+                    <td>734</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>0.77 </td>
+                    <td>0.80</td>
+                    <td>0.79</td>
+                    <td>1654</td>
+                </tr>
+                <tr>
+                    <td>avg / total</td>
+                    <td> 0.77 </td>
+                    <td>0.77</td>
+                    <td>0.77</td>
+                    <td>3543</td>
+                </tr>
 
-      <ol class="task-list">
-      <li>This is an ordered list following a header.</li>
-      <li>This is an ordered list following a header.</li>
-      <li>This is an ordered list following a header.</li>
-      </ol>
+            </tbody>
+        </table>
 
-      <h6>
-      <a id="user-content-header-6" class="anchor" href="#header-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Header 6</h6>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h2>
+        <p>Given that data set that we received</p>
+        <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary</h3>
 
-      <table>
-      <thead>
-      <tr>
-      <th>What</th>
-      <th>Follows</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>A table</td>
-      <td>A header</td>
-      </tr>
-      <tr>
-      <td>A table</td>
-      <td>A header</td>
-      </tr>
-      <tr>
-      <td>A table</td>
-      <td>A header</td>
-      </tr>
-      </tbody>
-      </table>
+        <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Factors that warrant additional study</h3>
 
-      <hr>
+        <ol class="task-list">
+            <li>
+                <strong>Longitudinal Data:  </strong>The data that we used was collected at different time points. A more in-depth analysis of longitudinal effects is therefore necessary.
+            </li>
+            <li><strong>Patient Participation:  </strong>At different timepoints, some patients either did not participate or when they did, incomplete data was collected. This situation leads to significance being given to patient who participate and whose data are complete. The sample data is therefore not a true representative of the entire population.
+            </li>
+            <li><strong>Race:  </strong>The participants in the study overwhelmingly identify as white and therefore do not necessarily represent a true sample of the Alzheimer’s population. Perhaps the assessments, genetics and medical history would yield different results for a different ethnicity. Further, this study is limited to Americans and perhaps a more causality inference study should be examined. Lastly, no objective criterial is provided to identify a person as belonging to one or another.
+            </li>
+        </ol>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits and References</h2>
+        <ol class="task-list">
+            <li>
+                <strong><a href="https://www.nia.nih.gov/health/alzheimers">About Alzheimers: </a></strong>https://www.nia.nih.gov/health/alzheimers
+            </li>
+            <li><strong><a href="http://adni.loni.usc.edu/study-design/background-rationale/">Target Variable Description:</a>  </strong>http://adni.loni.usc.edu/study-design/background-rationale/
+            </li>
+            <li><strong><a href="https://hsc.unm.edu/research/ctsc/Docs/longitudinal.pdf">Longitudinal Data:</a> </strong>https://hsc.unm.edu/research/ctsc/Docs/longitudinal.pdf
+            </li>
+        </ol>
 
-      <p>There's a horizontal rule above and below this.</p>
 
-      <hr>
-
-      <p>Here is an unordered list:</p>
-
-      <ul class="task-list">
-      <li>Salt-n-Pepa</li>
-      <li>Bel Biv DeVoe</li>
-      <li>Kid 'N Play</li>
-      </ul>
-
-      <p>And an ordered list:</p>
-
-      <ol class="task-list">
-      <li>Michael Jackson</li>
-      <li>Michael Bolton</li>
-      <li>Michael Bublé</li>
-      </ol>
-
-      <p>And an unordered task list:</p>
-
-      <ul class="task-list">
-      <li class="task-list-item">
-      <input type="checkbox" class="task-list-item-checkbox" checked="" disabled=""> Create a sample markdown document</li>
-      <li class="task-list-item">
-      <input type="checkbox" class="task-list-item-checkbox" checked="" disabled=""> Add task lists to it</li>
-      <li class="task-list-item">
-      <input type="checkbox" class="task-list-item-checkbox" disabled=""> Take a vacation</li>
-      </ul>
-
-      <p>And a "mixed" task list:</p>
-
-      <ul class="task-list">
-      <li class="task-list-item">
-      <input type="checkbox" class="task-list-item-checkbox" disabled=""> Steal underpants</li>
-      <li>?</li>
-      <li class="task-list-item">
-      <input type="checkbox" class="task-list-item-checkbox" disabled=""> Profit!</li>
-      </ul>
-
-      <p>And a nested list:</p>
-
-      <ul class="task-list">
-      <li>Jackson 5
-
-      <ul class="task-list">
-      <li>Michael</li>
-      <li>Tito</li>
-      <li>Jackie</li>
-      <li>Marlon</li>
-      <li>Jermaine</li>
-      </ul>
-      </li>
-      <li>TMNT
-
-      <ul class="task-list">
-      <li>Leonardo</li>
-      <li>Michelangelo</li>
-      <li>Donatello</li>
-      <li>Raphael</li>
-      </ul>
-      </li>
-      </ul>
-
-      <p>Definition lists can be used with HTML syntax. Definition terms are bold and italic.</p>
-
-      <dl>
-          <dt>Name</dt>
-          <dd>Godzilla</dd>
-          <dt>Born</dt>
-          <dd>1952</dd>
-          <dt>Birthplace</dt>
-          <dd>Japan</dd>
-          <dt>Color</dt>
-          <dd>Green</dd>
-      </dl>
-
-      <hr>
-
-      <p>Tables should have bold headings and alternating shaded rows.</p>
-
-      <table>
-      <thead>
-      <tr>
-      <th>Artist</th>
-      <th>Album</th>
-      <th>Year</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Michael Jackson</td>
-      <td>Thriller</td>
-      <td>1982</td>
-      </tr>
-      <tr>
-      <td>Prince</td>
-      <td>Purple Rain</td>
-      <td>1984</td>
-      </tr>
-      <tr>
-      <td>Beastie Boys</td>
-      <td>License to Ill</td>
-      <td>1986</td>
-      </tr>
-      </tbody>
-      </table>
-
-      <p>If a table is too wide, it should condense down and/or scroll horizontally.</p>
-
-      <table>
-      <thead>
-      <tr>
-      <th>Artist</th>
-      <th>Album</th>
-      <th>Year</th>
-      <th>Label</th>
-      <th>Awards</th>
-      <th>Songs</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Michael Jackson</td>
-      <td>Thriller</td>
-      <td>1982</td>
-      <td>Epic Records</td>
-      <td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
-      <td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
-      </tr>
-      <tr>
-      <td>Prince</td>
-      <td>Purple Rain</td>
-      <td>1984</td>
-      <td>Warner Brothers Records</td>
-      <td>Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal</td>
-      <td>Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain</td>
-      </tr>
-      <tr>
-      <td>Beastie Boys</td>
-      <td>License to Ill</td>
-      <td>1986</td>
-      <td>Mercury Records</td>
-      <td>noawardsbutthistablecelliswide</td>
-      <td>Rhymin &amp; Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill</td>
-      </tr>
-      </tbody>
-      </table>
-
-      <hr>
-
-      <p>Code snippets like <code>var foo = "bar";</code> can be shown inline.</p>
-
-      <p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
-
-      <p>Code can also be shown in a block element.</p>
-
-      <pre><code>var foo = "bar";
-</code></pre>
-
-      <p>Code can also use syntax highlighting.</p>
-
-      <div class="highlight highlight-Javascript"><pre><span class="pl-k">var</span> foo <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>;</pre></div>
-
-      <pre><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.</code></pre>
-
-      <div class="highlight highlight-Javascript"><pre><span class="pl-k">var</span> foo <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.<span class="pl-pds">"</span></span>;</pre></div>
-
-      <p>Inline code inside table cells should still be distinguishable.</p>
-
-      <table>
-      <thead>
-      <tr>
-      <th>Language</th>
-      <th>Code</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>Javascript</td>
-      <td><code>var foo = "bar";</code></td>
-      </tr>
-      <tr>
-      <td>Ruby</td>
-      <td><code>foo = "bar"</code></td>
-      </tr>
-      </tbody>
-      </table>
-
-      <hr>
-
-      <p>Small images should be shown at their actual size.</p>
-
-      <p><a href="https://camo.githubusercontent.com/16a9d5241f679b6429fc0597f10816dd2665bbb2/687474703a2f2f706c6163656b697474656e2e636f6d2f672f3330302f3230302f" target="_blank"><img src="https://camo.githubusercontent.com/16a9d5241f679b6429fc0597f10816dd2665bbb2/687474703a2f2f706c6163656b697474656e2e636f6d2f672f3330302f3230302f" alt="" data-canonical-src="https://placekitten.com/g/300/200/" style="max-width:100%;"></a></p>
-
-      <p>Large images should always scale down and fit in the content container.</p>
-
-      <p><a href="https://camo.githubusercontent.com/afe46418285497605cf4f6376b75f8c818658fb1/687474703a2f2f706c6163656b697474656e2e636f6d2f672f313230302f3830302f" target="_blank"><img src="https://camo.githubusercontent.com/afe46418285497605cf4f6376b75f8c818658fb1/687474703a2f2f706c6163656b697474656e2e636f6d2f672f313230302f3830302f" alt="" data-canonical-src="https://placekitten.com/g/1200/800/" style="max-width:100%;"></a></p>
-
-      <pre><code>This is the final element on the page and there should be no margin below this.</code></pre>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/jasonlong/cayman-theme">Cayman</a> is maintained by <a href="https://github.com/jasonlong">jasonlong</a>.</span>
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
-      </footer>
+        <footer class="site-footer">
+            <span class="site-footer-owner"></span>
+            <span class="site-footer-credits"></span>
+        </footer>
 
     </section>
 
-  </body>
+</body>
+
 </html>
