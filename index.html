@@ -15,25 +15,25 @@
     <section class="page-header">
         <h1 class="project-name">Alzheimer’s Disease and Cognitive Impairment Prediction</h1>
         <h2 class="project-tagline">Eliud Omollo, BS, MS</h2>
-        <a href="#" class="btn">Exploratory Data Analysis</a>
-        <a href="#" class="btn">Predictions</a>
-        <a href="#" class="btn">Additional Study</a>
+        <a href="#ExploratoryDataAnalysis" class="btn">Exploratory Data Analysis</a>
+        <a href="#Predictions" class="btn">Predictions</a>
+        <a href="https://github.com/woordy/woordy.github.io" class="btn">GitHub Raw Code</a>
+        <a href="#Summary" class="btn">Summary</a>
     </section>
 
     <section class="main-content">
-
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>I. Problem Statement and Motivation</h2>
 
         <p>In this study, we examine the significance of a subject's medical history in predicting symptoms of dementia or Alzheimer's disease.</p>
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>II. Introduction</h2>
-        <p>Alzheimer’s is a disease that erodes a patient’s memory, thinking skills and leads to poor judgement, reasoning, planning, language, and inability to perform simple tasks. It is the most common type of dementia affecting more than 5 million Americans.</p>
-        <p>Even though Alzheimer’s is ranked as the 6th leading cause of death in the United States, there is currently no cure for the disease. To find the cure for the disease, the first step is to learn and understand the cause of the disease. Even though, there’s tremendous about of data on the disease, scientists are still far from pin pointing a clear cause of the disease.</p>
+        <p>Alzheimer’s is a disease that erodes a patient’s memory, thinking skills and leads to poor judgement, reasoning, planning, language, and inability to perform simple tasks. It is the most common type of dementia affecting more than 5 million Americans. It is ranked as the 6th leading cause of death in the United States</p>
+        <p>Unfortunately, there is currently no cure for the disease. To find the cure for the disease, the first step is to learn and understand the cause of the disease.</p>
 
         <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>A. Risk Factors</h3>
 
         <ol class="task-list">
             <li>
-                <strong>Age: </strong>Even though Alzheimer’s is not part of the natural aging process, the risk of developing Alzheimer’s increases with age.
+                <strong>Age: </strong>Studies show that the risk of developing Alzheimer’s increases with age.
             </li>
             <li><strong>Genetics: </strong>The presence of certain genes, e.g.<a href="https://en.wikipedia.org/wiki/Apolipoprotein_E">apolipoprotein e4 (APoE4)</a> increase the risk of developing Alzheimer’s.
             </li>
@@ -44,7 +44,7 @@
         </ol>
 
         <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>B. Description of Data:</h3>
-        <p>The data from this study was obtained from <a href="http://www.adni-info.org/">ADNI (Alzheimer’s Disease Neuroimaging Initiative).</a> The data is maintained at USC’s Laboratory of Neuroimaging at <a href="http://adni.loni.usc.edu/"> ADNI LONI</a></p>
+        <p>The data for this study was obtained from <a href="http://www.adni-info.org/">ADNI (Alzheimer’s Disease Neuroimaging Initiative).</a> The data is maintained at USC’s Laboratory of Neuroimaging at <a href="http://adni.loni.usc.edu/"> ADNI LONI</a></p>
         <p>The data is grouped into the following categories:</p>
 
         <ol class="task-list">
@@ -97,21 +97,11 @@
 
 
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>III: Preprocessing</h2>
-        <p><strong>1: Merge: </strong>Merged the data using RID Column to guarantee that the medical record information on MEDHIST.csv matched correctly mapped to the ADNIMERGE.csv file.</p>
+        <p><strong>1: Merge: </strong>Merged the data using RID Column to guarantee that the medical record information on MEDHIST.csv correctly mapped to the data on ADNIMERGE.csv file.</p>
         <p><strong>2. Evaluate Missing Data: </strong>Investigated missing data and observed that the following columns had null values:</p>
         <p><img src="img/missing-data.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></p>
-        <ol class="task-list">
-            <li>DX: 32% Missing</li>
-            <li>MH14AALCH : 97.65 % Missing</li>
-            <li>MH14BALCH : 33.04 % Missing</li>
-            <li>MH14CALCH : 33.04% Missing</li>
-            <li>MH15ADRUG : 52.99 % Missing</li>
-            <li>MH15BDRUG : 52.99% Missing</li>
-            <li>MH16ASMOK : 33.04% Missing</li>
-            <li>MH16BSMOK : 33.04% Missing</li>
-            <li>MH16CSMOK : 33.04 % Missing</li>
-        </ol>
-        <p>These columns represent alcohol consumption, drug abuse and smoking. We considered using data imputation techniques to impute the missing data. But we ultimately decided against it. In our view, it’s would be inaccurate to conclude that a subject is smoker/drug user/consumes alcohol based on other the information on the medical chart and without a deep study on causal inference. We ultimately decided to drop these columns from the model. We also decided to drop the rows that did not have DX for the same reasons.</p>
+
+        <p>These columns represent alcohol consumption, drug abuse and smoking. We considered using data imputation techniques to impute the missing data. But we ultimately decided against it. In our view, it’s would be inaccurate to use other feautures on the dataset to impute the values of smoker/drug user/alcohol consumption without a deep understanding of causal inference. We ultimately decided to drop these columns from the model. We also decided to drop the rows that did not have DX for the same reasons.</p>
         <p><strong>3. Encode Output: </strong>The target variable is presented in the form of labels i.e. ‘CN’,’MCI’, ‘Dementia’. We used the LabelEncoder() method to encode the target as follows:</p>
         <pre><code>#encode the labels
 <br>from sklearn import preprocessing
@@ -143,9 +133,47 @@
             </tbody>
         </table>
 
-        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>IV. Exploratory Data Analysis</h2>
-        <p><img src="img/dx-count.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></p>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="ExploratoryDataAnalysis"></a>IV. Exploratory Data Analysis</h2>
+        <p><img src="img/dx-pie.png" alt="dx-pie" data-canonical-src="" style="max-width:100%;"></p>
+        Observe that the DX data is unbalanced and so we expect the model to be biased towards one class. Closer attention will need to be made on the confusion matrix
+        <p>The charts below the histogram of DX colored by each feature type</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td><img src="img/ft-01.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-02.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-03.png" alt="dx count" data-canonical-src="" style="max-width:100%;"> </td>
+                    <td><img src="img/ft-04.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-05.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                </tr>
+                <tr>
+                    <td><img src="img/ft-06.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-07.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td> <img src="img/ft-08.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-09.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-10.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                </tr>
+                <tr>
+                    <td><img src="img/ft-11.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-12.png" alt="dx count" data-canonical-src="" style="max-width:100%;"> </td>
+                    <td><img src="img/ft-13.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-14.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-15.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                </tr>
+                <tr>
+                    <td><img src="img/ft-16.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-17.png" alt="dx count" data-canonical-src="" style="max-width:100%;"> </td>
+                    <td><img src="img/ft-18.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-19.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                    <td><img src="img/ft-20.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Pair plot of features</p>
         <p><img src="img/pairplots.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></p>
+        <p>Histogram of Features</p>
+        <p><img src="img/ft-hist.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></p>
 
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Selection</h2>
         <p>We will use LogisticRegression with cross validation as a base model for our system. The table below shows the Classfication Report report for this model. Given the unbalanced nature of the data, the f1-score will be a better metric of measurements.F1-score is a weighted average of the precision and recall, with the best values at 1 and worst score at 0.</p>
@@ -191,9 +219,9 @@
 
             </tbody>
         </table>
+        <p>As expected the base model does relatively well in predicting class 2 because of the imbalance.</p>
 
-        <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decision Boundary</h3>
-        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predictions</h2>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="Predictions"></a>Predictions</h2>
         <p>We evaluated the following models</p>
         <ol class="task-list">
             <li>RandomForestClassifier</li>
@@ -201,7 +229,7 @@
             <li>Quadratic DiscriminantAnalysis</li>
             <li>KNeighborsClassifier</li>
         </ol>
-        <p>We did this by creating a pipeline of the models, then performed parameter tuning using crosss-validation, boostrap and Grid-Search For this data, Random Forrest classifer produced the best results. The Classification table below shows the results</p>
+        <p>We did this by creating a pipeline of the models, then performed parameter tuning using crosss-validation, boostrap and Grid-Search. For this data, Random Forrest classifer produced the best results. The Classification table below shows the results</p>
         <table>
             <thead>
                 <tr>
@@ -245,9 +273,9 @@
             </tbody>
         </table>
 
-        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h2>
-        <p>Given that data set that we received</p>
-        <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary</h3>
+        <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="Summary"></a>Summary</h2>
+        <p>In this exercise, we have showed subjects with certain health risks, have a greater likehood of developing Alzheimer's. However, it's not sufficient to conclude that given a patient who presents a medical history identical to those examined on this study, that this model will accurately predict whether that patient has Alzheimer’. Perhaps other causal features exist that haven't been studied </p>
+
 
         <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Factors that warrant additional study</h3>
 
