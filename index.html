@@ -14,7 +14,7 @@
 <body>
     <section class="page-header">
         <h1 class="project-name">Alzheimer’s Disease and Cognitive Impairment Prediction</h1>
-        <h2 class="project-tagline">Eliud Omollo, BS, MS</h2>
+        <h2 class="project-tagline">Eliud Omollo</h2>
         <a href="#ExploratoryDataAnalysis" class="btn">Exploratory Data Analysis</a>
         <a href="#Predictions" class="btn">Predictions</a>
         <a href="https://github.com/woordy/woordy.github.io" class="btn">GitHub Raw Code</a>
@@ -170,6 +170,7 @@
             </tbody>
         </table>
 
+        <p>We examine the corelation between the variables and observed </p>
         <p>Pair plot of features</p>
         <p><img src="img/pairplots.png" alt="dx count" data-canonical-src="" style="max-width:100%;"></p>
         <p>Histogram of Features</p>
@@ -224,12 +225,17 @@
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="Predictions"></a>Predictions</h2>
         <p>We evaluated the following models</p>
         <ol class="task-list">
-            <li>RandomForestClassifier</li>
-            <li>Linear DiscriminantAnalysis</li>
-            <li>Quadratic DiscriminantAnalysis</li>
-            <li>KNeighborsClassifier</li>
+
+            <li>Linear DiscriminantAnalysis: LDA presented very low results and predictive ability </li>
+            <li>Quadratic Discriminant Analysis: Perfomed better that LDA with increase f1-score on classs 1</li>
+            <li>K Neighbors Classifier: We observed that as K increased aove K=5, both the accuracy and F1-Score began to decrease</li>
+            <li>Random Forest Classifier: Results are shown below</li>
         </ol>
-        <p>We did this by creating a pipeline of the models, then performed parameter tuning using crosss-validation, boostrap and Grid-Search. For this data, Random Forrest classifer produced the best results. The Classification table below shows the results</p>
+        <p>We did this by creating a pipeline of the models, then performed parameter tuning using crosss-validation, boostrap and Grid-Search. For this data, Random Forrest classifer produced the best results. </p>
+        Train Score: 0.826856121201 | Test Score: 0.76883996613
+        <p>Because of the classs imbalance, we examine the classication report for additional information</p>
+        <p> The Classification table below shows the following results</p>
+
         <table>
             <thead>
                 <tr>
@@ -272,9 +278,9 @@
 
             </tbody>
         </table>
-
+        <p>For all three classes, the F1-score has significantly improved over the Logistical regression base model.</p>
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="Summary"></a>Summary</h2>
-        <p>In this exercise, we have showed subjects with certain health risks, have a greater likehood of developing Alzheimer's. However, it's not sufficient to conclude that given a patient who presents a medical history identical to those examined on this study, that this model will accurately predict whether that patient has Alzheimer’. Perhaps other causal features exist that haven't been studied </p>
+        <p>In this exercise, we have that showed subjects with certain health risks, have a greater like hood of developing Alzheimer's. However, it's not sufficient to conclude that given a patient who presents a medical history identical to those examined on this study, that this model will accurately predict whether that patient has Alzheimer’. Perhaps other causal features exist that haven't been studied</p>
 
 
         <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Factors that warrant additional study</h3>
