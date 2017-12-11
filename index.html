@@ -138,7 +138,7 @@
         <p>Pie Chart of Distribution of DX</p>
         <p><img src="img/dx-pie.png" alt="dx-pie" data-canonical-src="" style="max-width:100%;"></p>
         Observe that the DX data is unbalanced with 46.6% of subjects showing signs of MCI compared to 20.50% with Dementia and 32.83% being Cognitive Normal.
-        <p>The charts below the histogram of DX with the color indicating the distribution of each labelled feature</p>
+        <p>The charts below show the histogram of DX with the color indicating the distribution of each labelled feature</p>
         <table>
             <tbody>
                 <tr>
@@ -266,8 +266,8 @@
             </tbody>
         </table>
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="ExploratoryDataAnalysis"></a>II. D: Baseline : Using Single Cognitive Test to determine Cognitive State</h2>
-        <p>We will evaluate how well each cognitive test performs. Then we will evaluate how perform a whole</p>
-        <p><strong>1: Standardize the data: </strong> Standardize the data to eliminate wide ranges and center the data around mean of zero</p>
+        <p>We will evaluate how well each cognitive test performs. Then we will evaluate how they perform as a group</p>
+        <p><strong>1: Standardize the data: </strong> Standardize the data to eliminate wide ranges and center the data around mean of zero.</p>
         <p> We fit the cognitive tests to the following models and obtained the following scores:</p>
         <p>Score Table</p>
         <table>
@@ -286,7 +286,7 @@
                 </tr>
             </tbody>
         </table>
-        <p> In all the models, CDRS had the best score at 0.863555 and F1 Score of 0.863338. Random Forrest with n_estimators = 10 also performed better than the other models. In all cases, k nearest neighbor performed very poorly.. Beyond n_estimators, additional trees did not provide any significance increase in performance.
+        <p> In all the models, CDRS has the best score at 0.863555 and F1 Score of 0.863338. Random Forrest with n_estimators = 10 also performed better than the other models. In all cases, k nearest neighbor performed very poorly.. Beyond n_estimators =10, additional trees did not provide any significance increase in performance.
         </p>
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="ExploratoryDataAnalysis"></a>II. D: Baseline : Using All Cognitive Tests to determine Cognitive State</h2>
         <p>Score Table</p>
@@ -322,7 +322,7 @@
 
         <p><strong>3. Encode Output: </strong>The medical history data contains binary data, so no additional encoding is needed</p>
         <p><strong>4. Final Results: </strong></p>
-        <p> We observed again that Random Forrest has continues to have the highest accuract, f1-score and recall score. The addition of the medical history improved the performance of the model but the increase was very marginal</p>
+        <p> We observed again that Random Forrest continues to have the highest accuracy, f1-score and recall score. The addition of the medical history improved the performance of the model but the increase was very marginal.</p>
         <p>Score Table</p>
         <table>
             <tbody>
@@ -333,7 +333,7 @@
         </table>
 
         <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="Summary"></a>Summary</h2>
-        <p>We demonstrated that demographic information, cognitive and medical history improved the performance of our model in predicting the cognitive state of a patient. Careful section and understanding of features should be made to prevent collinearity. In addition, proper handling of longitudinal data is important to maintain evaluating the data. We also evaluated the observed that random forests outperformed the other models(LDA, QDA, Logistical Regression) in all cases for this data set. </p>
+        <p>We demonstrated that demographic information, cognitive and medical history improved the performance of our model in predicting the cognitive state of a patient. Careful selection and understanding of features should be made to prevent collinearity. In addition, proper handling of longitudinal data is important to prevent large variance in perfomance. We also evaluated the observed that random forests outperformed the other models(LDA, QDA, Logistical Regression) in all cases for this data set. </p>
 
 
         <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Factors that warrant additional study</h3>
